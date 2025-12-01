@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Home, History, Menu, ChefHat, ShoppingCart } from 'lucide-react'
+import { Home, History, Menu, ChefHat, ShoppingCart, ClipboardList } from 'lucide-react'
 import { Popup, List, Button } from 'antd-mobile'
 
 export default function Sidebar() {
@@ -11,8 +11,9 @@ export default function Sidebar() {
     const pathname = usePathname()
 
     const menuItems = [
-        { name: 'Create Menu', icon: Home, href: '/' },
+        { name: 'Create Menu', icon: Home, href: '/create' },
         { name: 'Order', icon: ShoppingCart, href: '/latest-order' },
+        { name: 'Summary', icon: ClipboardList, href: '/latest-summary' },
         { name: 'Menu History', icon: History, href: '/history' },
     ]
 

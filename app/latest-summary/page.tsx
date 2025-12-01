@@ -4,18 +4,6 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { SpinLoading, ErrorBlock, Button } from 'antd-mobile'
 import { supabase } from '@/lib/supabase'
-import { unstableSetRender } from 'antd-mobile'; // Support since version ^5.40.0
-import { createRoot } from 'react-dom/client';
-
-unstableSetRender((node, container) => {
-  container._reactRoot ||= createRoot(container);
-  const root = container._reactRoot;
-  root.render(node);
-  return async () => {
-    await new Promise((resolve) => setTimeout(resolve, 0));
-    root.unmount();
-  };
-});
 
 export default function LatestOrderPage() {
     const router = useRouter()
@@ -40,7 +28,7 @@ export default function LatestOrderPage() {
 
             // Redirect to the order page for this menu
             if (data) {
-                router.push(`/order/${data.id}`)
+                router.push(`/summary/${data.id}`)
             }
         } catch (err) {
             console.error('Error fetching latest menu:', err)
@@ -68,7 +56,7 @@ export default function LatestOrderPage() {
                 <Button
                     block
                     color='primary'
-                    onClick={() => router.push('/create')}
+                    onClick={() => router.push('/')}
                     style={{ marginTop: '16px' }}
                 >
                     Create Menu

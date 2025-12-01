@@ -198,6 +198,7 @@ export default function OrderPage() {
             {!menu.is_closed && (
                 <Button
                     block
+                    color='success'
                     onClick={() => router.push(`/summary/${menuId}`)}
                     style={{ marginBottom: '24px' }}
                 >
@@ -208,8 +209,8 @@ export default function OrderPage() {
             {menu.is_closed ? (
                 <Card style={{ textAlign: 'center', padding: '32px 16px' }}>
                     <Lock size={48} color='var(--adm-color-danger)' style={{ margin: '0 auto 16px' }} />
-                    <h3 style={{ margin: '0 0 8px', color: 'var(--adm-color-danger)' }}>Orders are closed</h3>
-                    <p style={{ color: 'var(--adm-color-text-secondary)' }}>You can no longer submit orders for this menu.</p>
+                    <h3 style={{ margin: '0 0 8px', color: 'var(--adm-color-danger)' }}>Orders are already closed ⛔</h3>
+                    <p style={{ color: 'var(--adm-color-text-secondary)' }}>You can no longer submit orders for this menu 😢 </p>
                     <Button
                         block
                         color='primary'
@@ -220,21 +221,26 @@ export default function OrderPage() {
                     </Button>
                 </Card>
             ) : (
-                <Space direction='vertical' block style={{ '--gap': '24px' }}>
-                    <Card title='Your Name'>
-                        <Input
-                            placeholder='Enter your name'
-                            value={customerName}
-                            onChange={setCustomerName}
-                            clearable
-                            style={{ '--font-size': '16px' }}
-                        />
+                <Space direction='vertical' block style={{ '--gap': '2px' }}>
+                    <Card title='Nama Pelanggan'>
+                            <Input
+                                placeholder='Masukkan nama anda di sini'
+                                value={customerName}
+                                onChange={setCustomerName}
+                                clearable
+                                style={{
+                                    '--font-size': '16px',
+                                    border: '1px solid var(--adm-color-border)',
+                                    borderRadius: '8px',
+                                    padding: '8px'
+                                }}
+                            />
                     </Card>
 
                     <Card title={
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0px' }}>
                             <ShoppingCart size={20} color='var(--adm-color-primary)' />
-                            <span>Select Items</span>
+                            <span>Pilih Menu Makanan</span>
                         </div>
                     } bodyStyle={{ padding: 0 }}>
                         {menuItems.map((item) => (
@@ -250,11 +256,11 @@ export default function OrderPage() {
                     <Card title={
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <MessageSquare size={20} color='var(--adm-color-primary)' />
-                            <span>Remarks (Optional)</span>
+                            <span>Catatan / Remarks</span>
                         </div>
                     }>
                         <TextArea
-                            placeholder='e.g., Less spicy, no onions, extra rice...'
+                            placeholder='Nasi Separuh, Ayam Thigh, Kuah Kari Lebih'
                             value={remarks}
                             onChange={setRemarks}
                             autoSize={{ minRows: 3, maxRows: 6 }}

@@ -168,10 +168,10 @@ export default function HistoryPage() {
                     <Button
                         block
                         color='primary'
-                        onClick={() => router.push('/')}
+                        onClick={() => router.push('/create')}
                         style={{ marginTop: '16px' }}
                     >
-                        Create First Menu
+                        Create Menu
                     </Button>
                 </div>
             )}
