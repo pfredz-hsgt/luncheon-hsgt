@@ -219,22 +219,30 @@ export default function OrderPage() {
                     >
                         View Order Summary
                     </Button>
+                    <Button
+                        block
+                        color='warning'
+                        onClick={() => router.push(`/create`)}
+                        style={{ marginTop: '16px' }}
+                    >
+                        Create New Order
+                    </Button>
                 </Card>
             ) : (
                 <Space direction='vertical' block style={{ '--gap': '2px' }}>
                     <Card title='Nama Pelanggan'>
-                            <Input
-                                placeholder='Masukkan nama anda di sini'
-                                value={customerName}
-                                onChange={setCustomerName}
-                                clearable
-                                style={{
-                                    '--font-size': '16px',
-                                    border: '1px solid var(--adm-color-border)',
-                                    borderRadius: '8px',
-                                    padding: '8px'
-                                }}
-                            />
+                        <Input
+                            placeholder='Masukkan nama anda di sini'
+                            value={customerName}
+                            onChange={setCustomerName}
+                            clearable
+                            style={{
+                                '--font-size': '16px',
+                                border: '1px solid var(--adm-color-border)',
+                                borderRadius: '8px',
+                                padding: '8px'
+                            }}
+                        />
                     </Card>
 
                     <Card title={

@@ -226,7 +226,7 @@ export default function SummaryPage() {
                     >
                         <Space>
                             <Copy size={20} />
-                            <span>{copying ? 'Copying...' : 'Copy WhatsApp'}</span>
+                            <span>{copying ? 'Copying...' : 'Copy-Whatsapp'}</span>
                         </Space>
                     </Button>
                 </div>
@@ -251,7 +251,7 @@ export default function SummaryPage() {
                     <Button
                         color='primary'
                         onClick={() => {
-                            const orderLink = `${window.location.origin}/order/${menuId}`
+                            const orderLink = `${window.location.origin}/latest-order`
                             copyToClipboard(orderLink)
                             alert('Order link copied!')
                         }}

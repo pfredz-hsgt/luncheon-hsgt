@@ -1,6 +1,6 @@
 # 🍱 Luncheon Order - Lunch Coordination App
 
-A mobile-first web application for coordinating daily lunch orders from WhatsApp menu messages, built with Next.js 14+, Tailwind CSS, and Supabase.
+A mobile-first web application for coordinating daily lunch orders from WhatsApp menu messages, built with Next.js 14+, styled with Ant-Design Mobile, and Supabase.
 
 ## ✨ Features
 
@@ -53,12 +53,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### For Admins (Creating Menu):
 
-1. Visit the home page (`/`)
+1. Visit the home page (`/create`)
 2. Paste your WhatsApp menu message
 3. Select the menu date (defaults to today)
 4. Toggle "Order Status" if you want to close orders
-5. Click "Create Menu & Get Order Link"
-6. Share the generated link with your colleagues
+5. Click "Create Menu"
+6. Share the web link with your colleagues (it will automatically fetch latest menu)
 
 ### For Customers (Placing Orders):
 
@@ -67,7 +67,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 3. Select quantities for each item using +/- buttons
 4. Add remarks (optional)
 5. Click "Submit Order"
-6. Use "Add Another Order" to order for someone else
+6. Click "View Order Summary" to view all currently placed order
 
 ### For Admins (Managing Orders):
 
